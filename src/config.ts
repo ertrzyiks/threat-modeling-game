@@ -39,7 +39,7 @@ export const config: Record<string, { prefix: string, color: string, cards: Reco
   },
   "Repudiation": {
     prefix: "R",
-    color: "text-violet-400",
+    color: "text-teal-400",
     cards: {
       "2": "An attacker can pass data through the log to attack a log reader, and there's no documentation of what sorts of validation are done",
       "3": "A low privilege attacker can read interesting security information in the logs",

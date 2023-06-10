@@ -14,7 +14,7 @@ function Card({ group, value, description, className }: Props) {
         <div className={['p-3 w-12 text-center rounded-e-lg text-md mr-2', highValue ? 'bg-white' : 'bg-current'].join(' ')}>
           <span className={highValue ? 'text-current' : 'text-white'}>{value}</span>
         </div>
-        <span className={['py-3 text-md', highValue ? 'text-white opacity-70' : 'text-current'].join(' ')}>{group}</span>
+        <span className={['py-3 text-md', highValue ? 'text-white opacity-80' : 'text-current'].join(' ')}>{group}</span>
       </div>
 
       <div className={['mt-2 px-4 text-md', highValue ? 'text-white' : 'text-black'].join(' ')}>{description}</div>

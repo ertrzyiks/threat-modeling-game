@@ -15,7 +15,6 @@ const allCodes = Object.keys(config).reduce((acc, group) => {
   return acc
 }, [] as string[])
 
-
 const examples = [
   'S2',
   'S2,I8',
