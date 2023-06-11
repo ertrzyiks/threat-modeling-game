@@ -10,7 +10,7 @@ function Card({ code, group, value, description, className }: Props) {
   const highValue = ['J', 'Q', 'K', 'A'].includes(value)
 
   return (
-    <div className={['w-64 h-96 border-solid border-2 border-current relative', className, highValue ? 'bg-current' : 'bg-white'].join(' ')}>
+    <div className={['transition-all duration-300 ease-out w-64 h-96 border-solid border-2 border-current relative', className, highValue ? 'bg-current' : 'bg-white'].join(' ')}>
       <div className="flex py-3">
         <div title='Card value' className={['p-3 w-12 text-center rounded-e-lg text-md mr-2', highValue ? 'bg-white' : 'bg-current'].join(' ')}>
           <span className={highValue ? 'text-current' : 'text-white'}>{value}</span>

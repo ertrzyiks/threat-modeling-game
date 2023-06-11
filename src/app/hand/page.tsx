@@ -1,5 +1,5 @@
 'use client'
-
+import { useState } from 'react'
 import { Card } from '~/components/Card/Card'
 import { getCardByCode } from '~/getCardByCode'
 import { useSearchParams } from 'next/navigation'
@@ -9,6 +9,16 @@ export default function Home() {
   const codes = params.get('cards')
   const cards = (codes ? codes.split(',') : []).map(code => getCardByCode(code))
 
+  const [usedCards, setUsedCards] = useState<string[]>([])
+
+  const toggleCard = (code: string) => {
+    if (usedCards.includes(code)) {
+      setUsedCards(usedCards.filter(usedCode => usedCode !== code))
+    } else {
+      setUsedCards([...usedCards, code])
+    }
+  }
+
   return (
     <main>
       <div className="px-12">
@@ -16,14 +26,19 @@ export default function Home() {
 
         <div className="flex flex-wrap gap-4">
           {cards.map(card => (
-            <Card
+            <div
               key={card.code}
-              code={card.code}
-              group={card.group}
-              value={card.value}
-              description={card.description}
-              className={card.className}
-            />
+              className={['cursor-pointer transition-opacity duration-300', usedCards.includes(card.code) ? 'opacity-70' : ''].join(' ')}
+              onClick={() => toggleCard(card.code)}
+            >
+              <Card
+                code={card.code}
+                group={card.group}
+                value={card.value}
+                description={card.description}
+                className={usedCards.includes(card.code) ? 'text-slate-600 opacity-40' : card.className}
+              />
+            </div>
           ))}
         </div>
       </div>
