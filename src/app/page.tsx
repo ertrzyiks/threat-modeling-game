@@ -1,16 +1,7 @@
 import { Card } from '~/components/Card/Card'
-import { config } from '~/config'
 import { getCardByCode } from '~/getCardByCode'
+import { allCodes } from '~/allCodes'
 import Link from 'next/link'
-
-const allCodes = Object.keys(config).reduce((acc, group) => {
-  const groupConfig = config[group]
-  const prefix = groupConfig.prefix
-  const codes = Object.keys(groupConfig.cards).map(value => prefix + value)
-  codes.forEach(code => acc.push(code))
-
-  return acc
-}, [] as string[])
 
 const examples = [
   'S2',

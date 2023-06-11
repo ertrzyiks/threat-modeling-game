@@ -1,6 +1,8 @@
 import './globals.css'
 import Link from 'next/link'
 import { Inter } from 'next/font/google'
+import { allCodes } from '~/allCodes'
+import CardTransitions from '~/components/CardTransitions/CardTransitions'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <CardTransitions codes={allCodes} />
+      </head>
       <body className={inter.className}>
         <div className="min-h-screen">
           <div className="antialiased bg-gray-100">
@@ -23,7 +28,7 @@ export default function RootLayout({
               <div className="flex flex-col px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
                 <div className="flex flex-row items-center justify-between p-4">
                   <Link href="/" className="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">
-                    Thread Modeling
+                    Threat Modeling
                   </Link>
                 </div>
               </div>

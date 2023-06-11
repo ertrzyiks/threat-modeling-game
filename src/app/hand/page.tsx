@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { flushSync } from 'react-dom'
 import { Card } from '~/components/Card/Card'
 import { getCardByCode } from '~/getCardByCode'
@@ -45,10 +45,12 @@ export default function Home() {
   return (
     <main>
       <div className="px-12">
-        <h2 className="text-4xl my-4">Your cards</h2>
-
         <div className="card-decks">
           <div>
+            <h2 className="text-4xl my-4">Your hand</h2>
+
+            <p className="mb-4">Click a card to discard it, click again to bring it back.</p>
+
             <div className="flex flex-wrap gap-4">
               {activeCards.map(card => (
                 <div
@@ -66,10 +68,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            <p className="mt-4">Click a card to discard it, click again to bring it back.</p>
           </div>
           <div>
+            <h2 className="text-4xl my-4">Discarded cards</h2>
+
             <div className="flex flex-wrap gap-4 relative">
               {discardedCards.map((card, index) => (
                 <div

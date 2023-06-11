@@ -7,6 +7,11 @@
   grid-template-columns: 1fr 300px;
 }
 
-.card-in-move {
-  view-transition-name: card;
+/* ::view-transition-new(IJ) {
+  outline: 10px solid red;
 }
+
+::view-transition-old(IJ) {
+  outline: 10px solid green;
+} */
+
