@@ -1,10 +1,7 @@
-'use client'
-
 import { Card } from '~/components/Card/Card'
 import { config } from '~/config'
 import { getCardByCode } from '~/getCardByCode'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
 
 const allCodes = Object.keys(config).reduce((acc, group) => {
   const groupConfig = config[group]
@@ -23,26 +20,22 @@ const examples = [
 ]
 
 export default function Home() {
-  const params = useSearchParams()
-  const codes = params.get('cards')
-  const cards = (codes ? codes.split(',') : allCodes).map(code => getCardByCode(code))
+  const cards = allCodes.map(code => getCardByCode(code))
 
   return (
     <main>
-      {codes === null && (
-        <div className='my-2 px-12 mb-12'>
-          <h2 className="text-4xl my-4">Examples</h2>
+      <div className='my-2 px-12 mb-12'>
+        <h2 className="text-4xl my-4">Examples</h2>
 
-          <ul className="list-disc list-inside">
-            {examples.map(example => (
-              <li key={example}><Link href={`?cards=${example}`}>?cards={example}</Link></li>
-            ))}
-          </ul>
-        </div>
-      )}
+        <ul className="list-disc list-inside">
+          {examples.map(example => (
+            <li key={example}><Link href={`/hand?cards=${example}`}>/hand?cards={example}</Link></li>
+          ))}
+        </ul>
+      </div>
 
       <div className="px-12">
-        <h2 className="text-4xl my-4">{codes === null ? 'All' : 'Your'} cards</h2>
+        <h2 className="text-4xl my-4">All cards</h2>
 
         <div className="flex flex-wrap gap-4">
           {cards.map(card => (
