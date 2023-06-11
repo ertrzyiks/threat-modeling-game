@@ -24,6 +24,8 @@ export default function Home() {
       <div className="px-12">
         <h2 className="text-4xl my-4">Your cards</h2>
 
+
+
         <div className="flex flex-wrap gap-4">
           {cards.map(card => (
             <div
@@ -41,6 +43,8 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        <p className="mt-4">Click a card to discard it, click again to bring it back.</p>
       </div>
     </main>
   )
