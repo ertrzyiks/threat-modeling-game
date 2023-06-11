@@ -18,6 +18,7 @@ export default function Home() {
           {cards.map(card => (
             <Card
               key={card.code}
+              code={card.code}
               group={card.group}
               value={card.value}
               description={card.description}
