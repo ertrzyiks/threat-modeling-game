@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card-decks {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+}
+
+.card-in-move {
+  view-transition-name: card;
+}
