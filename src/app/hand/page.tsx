@@ -53,9 +53,8 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4">
               {activeCards.map(card => (
-                <div
+                <button
                   key={card.code}
-                  className='cursor-pointer'
                   onClick={() => toggleCard(card.code)}
                 >
                   <Card
@@ -65,7 +64,7 @@ export default function Home() {
                     description={card.description}
                     className={card.className}
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
@@ -74,9 +73,9 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-4 relative">
               {discardedCards.map((card, index) => (
-                <div
+                <button
                   key={card.code}
-                  className='cursor-pointer bg-white absolute top-0'
+                  className=' bg-white absolute top-0'
                   onClick={() => toggleCard(card.code)}
                   style={{ top: `${index}rem`, left: `${index}rem` }}
                 >
@@ -87,7 +86,7 @@ export default function Home() {
                     description={card.description}
                     className={card.className}
                   />
-                </div>
+                </button>
               ))}
             </div>
           </div>
