@@ -55,6 +55,7 @@ export default function Home() {
               {activeCards.map(card => (
                 <button
                   key={card.code}
+                  className='transition-transform active:scale-105'
                   onClick={() => toggleCard(card.code)}
                 >
                   <Card
