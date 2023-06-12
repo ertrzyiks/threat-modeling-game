@@ -46,7 +46,7 @@ export default function Home() {
     <main>
       <div className="px-12">
         <div className="card-decks">
-          <div>
+          <div className='relative z-10'>
             <h2 className="text-4xl my-4">Your hand</h2>
 
             <p className="mb-4">Click a card to discard it, click again to bring it back.</p>
@@ -69,7 +69,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div>
+          <div className='relative z-0'>
             <h2 className="text-4xl my-4">Discarded cards</h2>
 
             <div className="flex flex-wrap gap-4 relative">
