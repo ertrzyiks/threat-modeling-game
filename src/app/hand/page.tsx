@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <main>
       <div className="px-12">
-        <div className="card-decks">
+        <div className="grid grid-col-1 lg:grid-cols-card-deck">
           <div className='relative z-10'>
             <h2 className="text-4xl my-4">Your hand</h2>
 
