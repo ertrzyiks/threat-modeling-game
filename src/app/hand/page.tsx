@@ -20,8 +20,8 @@ const withViewTransition = (fn: () => void) => {
 
 export default function Home() {
   const params = useSearchParams()
-  const codes = params.get('cards') ?? ''
-  const cardCodes = codes.split(',')
+  const codes = params.get('cards')
+  const cardCodes = codes?.split(',') ?? []
 
   const [activeCardCodes, setActiveCardCodes] = useState<string[]>(cardCodes)
   const [discardedCardCodes, setDiscardedCardCodes] = useState<string[]>([])
